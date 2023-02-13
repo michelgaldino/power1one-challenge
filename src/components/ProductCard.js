@@ -10,7 +10,7 @@ import {
 //Utils
 import { COLORS } from '../resources/colors';
 
-const ProductCard = ({ product, onPress }) => {
+const ProductCard = ({ product, onSelect }) => {
 
 
     //Formata o preço para BRL
@@ -21,12 +21,15 @@ const ProductCard = ({ product, onPress }) => {
     }
 
     return (
-        <TouchableOpacity onPress={onPress} style={styles.container}>
+        <TouchableOpacity onPress={() => onSelect(product)} style={styles.container}>
             <View>
-                <Image 
-                    style={{ aspectRatio: 0.8 }}
-                    source={{ uri: product['ProductImage'][0].http}}
-                />
+                {product['ProductImage'][0]
+                    ? <Image 
+                        style={{ aspectRatio: 1 }}
+                        source={{ uri: product['ProductImage'][0].https}}
+                    />
+                    :null
+                }
                 <Text 
                     style={styles.productName}
                     numberOfLines={3}
