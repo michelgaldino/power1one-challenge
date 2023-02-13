@@ -24,7 +24,7 @@ export default function Router(){
                     borderColor: 'transparent',
                 },
                 tabBarActiveTintColor: COLORS.white,
-                tabBarInactiveTintColor: COLORS.black,
+                tabBarInactiveTintColor: COLORS.grey,
                 tabBarItemStyle: {
                     paddingTop: 5,
                     paddingBottom: 5,
