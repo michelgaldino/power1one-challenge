@@ -19,6 +19,7 @@ import { COLORS } from '../resources/colors';
 import axios from 'axios';
 import { Modalize } from 'react-native-modalize';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Constants from 'expo-constants';
 
 const { height, width } = Dimensions.get('window')
 
@@ -101,12 +102,15 @@ const Home = () => {
             />
 
             <Modalize 
-                adjustToContentHeight={false} 
+                adjustToContentHeight={true} 
                 disableScrollIfPossible={false} 
-                modalStyle={{backgroundColor: COLORS.background}} 
+                modalStyle={{
+                    backgroundColor: COLORS.background, 
+                    marginTop: Constants.statusBarHeight,
+                }} 
                 ref={modalize} 
-                snapPoint={height*0.85}
-                modalHeight={height*0.9}
+                snapPoint={height*0.65}
+                // modalHeight={height*0.9}
                 HeaderComponent={
                     <ModalizeHeader
                         title='Detalhes do produto' 

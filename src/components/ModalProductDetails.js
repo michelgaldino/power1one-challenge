@@ -107,6 +107,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 20,
+        paddingBottom: 40,
     },
     productName: {
         fontSize: 22,
